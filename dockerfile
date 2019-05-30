@@ -17,4 +17,4 @@ RUN  go get ./
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo .
 
 # 设置我们应用程序的启动命令
-CMD ["./main"]
+CMD ["./cloudgo-io"]
