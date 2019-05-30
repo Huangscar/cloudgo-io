@@ -1,11 +1,9 @@
-FROM golang:1.6
+FROM golang:latest
 
-# Install beego and the bee dev tool
-RUN go get github.com/astaxie/beego && go get github.com/beego/bee
+WORKDIR $GOPATH/src/github.com/Huangscar/gloudgo-io
+COPY . $GOPATH/src/github.com/Huangscar/gloudgo-io
+RUN go build .
 
-# Expose the application on port 8080
 EXPOSE 8080
 
-# Set the entry point of the container to the bee command that runs the
-# application and watches for changes
-CMD ["bee", "run"]
+ENTRYPOINT ["./main"]
