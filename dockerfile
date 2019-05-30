@@ -6,6 +6,8 @@ FROM golang:1.10 AS build
 # 设置我们应用程序的工作目录
 WORKDIR /go/src/github.com/Huangscar/cloudgo-io
 
+RUN  go get -d -v
+
 # 添加所有需要编译的应用代码
 ADD . .
 
